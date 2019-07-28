@@ -1,0 +1,165 @@
+\indexentry{sistema operativo|hyperpage}{9}
+\indexentry{bootstrap|hyperpage}{10}
+\indexentry{firmware|hyperpage}{10}
+\indexentry{system call|hyperpage}{10}
+\indexentry{buffer|hyperpage}{12}
+\indexentry{multiprogrammazione|hyperpage}{13}
+\indexentry{job pool|hyperpage}{13}
+\indexentry{multitasking|hyperpage}{14}
+\indexentry{sistema distribuito|hyperpage}{16}
+\indexentry{system call|hyperpage}{17}
+\indexentry{API|hyperpage}{17}
+\indexentry{modello a scambio di messaggi|hyperpage}{20}
+\indexentry{modello a memoria condivisa|hyperpage}{20}
+\indexentry{metodo stratificato|hyperpage}{22}
+\indexentry{microkernel|hyperpage}{23}
+\indexentry{bootstrap|hyperpage}{26}
+\indexentry{process control block|hyperpage}{29}
+\indexentry{scheduler|hyperpage}{31}
+\indexentry{swapping|hyperpage}{32}
+\indexentry{pid|hyperpage}{32}
+\indexentry{fork()|hyperpage}{33}
+\indexentry{exit()|hyperpage}{33}
+\indexentry{IPC|hyperpage}{34}
+\indexentry{modello a memoria condivisa|hyperpage}{34}
+\indexentry{modello a scambio di messaggi|hyperpage}{35}
+\indexentry{communication link|hyperpage}{35}
+\indexentry{mailbox|hyperpage}{36}
+\indexentry{comunicazione sincrona|hyperpage}{37}
+\indexentry{comunicazione asincrona|hyperpage}{37}
+\indexentry{rendez-vous|hyperpage}{37}
+\indexentry{buffering|hyperpage}{38}
+\indexentry{RPC|hyperpage}{38}
+\indexentry{RMI|hyperpage}{38}
+\indexentry{socket|hyperpage}{38}
+\indexentry{TCP|hyperpage}{39}
+\indexentry{UDP|hyperpage}{39}
+\indexentry{loopback|hyperpage}{39}
+\indexentry{TCP/IP|hyperpage}{39}
+\indexentry{RPC|hyperpage}{39}
+\indexentry{IPC|hyperpage}{39}
+\indexentry{stub|hyperpage}{39}
+\indexentry{marshalling|hyperpage}{39}
+\indexentry{rendezvous|hyperpage}{40}
+\indexentry{matchmaker|hyperpage}{40}
+\indexentry{pipe|hyperpage}{41}
+\indexentry{thread|hyperpage}{43}
+\indexentry{heavyweight process|hyperpage}{43}
+\indexentry{core|hyperpage}{44}
+\indexentry{multicore|hyperpage}{44}
+\indexentry{esecuzione concorrente|hyperpage}{44}
+\indexentry{interleaved|hyperpage}{44}
+\indexentry{API|hyperpage}{46}
+\indexentry{Pthreads|hyperpage}{46}
+\indexentry{Pthreads|hyperpage}{46}
+\indexentry{Thread|hyperpage}{46}
+\indexentry{run()|hyperpage}{47}
+\indexentry{Runnable|hyperpage}{47}
+\indexentry{start|hyperpage}{47}
+\indexentry{fork()|hyperpage}{47}
+\indexentry{exec()|hyperpage}{47}
+\indexentry{target thread|hyperpage}{47}
+\indexentry{cancellation point|hyperpage}{48}
+\indexentry{chiamate di procedure asincrone|hyperpage}{48}
+\indexentry{APC|hyperpage}{48}
+\indexentry{thread pool|hyperpage}{49}
+\indexentry{LWP|hyperpage}{49}
+\indexentry{light weight process|hyperpage}{49}
+\indexentry{attivazione dello scheduler|hyperpage}{49}
+\indexentry{upcall|hyperpage}{49}
+\indexentry{CPU burst|hyperpage}{50}
+\indexentry{I/O burst|hyperpage}{50}
+\indexentry{burst|hyperpage}{50}
+\indexentry{I/O bound|hyperpage}{50}
+\indexentry{CPU bound|hyperpage}{50}
+\indexentry{bound|hyperpage}{50}
+\indexentry{scheduler a breve termine|hyperpage}{50}
+\indexentry{process control block|hyperpage}{50}
+\indexentry{PCB|hyperpage}{50}
+\indexentry{prelazione|hyperpage}{51}
+\indexentry{diritto di prelazione|hyperpage}{51}
+\indexentry{dispatcher|hyperpage}{51}
+\indexentry{latenza|hyperpage}{51}
+\indexentry{FCFS|hyperpage}{52}
+\indexentry{Gantt|hyperpage}{52}
+\indexentry{SJF|hyperpage}{53}
+\indexentry{round-robin|hyperpage}{56}
+\indexentry{RR|hyperpage}{56}
+\indexentry{time slice|hyperpage}{56}
+\indexentry{retroazione|hyperpage}{58}
+\indexentry{PCS|hyperpage}{59}
+\indexentry{process contention scope|hyperpage}{59}
+\indexentry{multielaborazione asimmetrica|hyperpage}{60}
+\indexentry{multielaborazione simmetrica|hyperpage}{60}
+\indexentry{predilezione|hyperpage}{60}
+\indexentry{migrazione guidata|hyperpage}{60}
+\indexentry{migrazione spontanea|hyperpage}{60}
+\indexentry{multicore|hyperpage}{61}
+\indexentry{stallo della memoria|hyperpage}{61}
+\indexentry{multithreading|hyperpage}{61}
+\indexentry{race condition|hyperpage}{62}
+\indexentry{sezione critica|hyperpage}{62}
+\indexentry{diritto di prelazione|hyperpage}{63}
+\indexentry{Peterson|hyperpage}{63}
+\indexentry{lock|hyperpage}{64}
+\indexentry{semaforo|hyperpage}{65}
+\indexentry{lock mutex|hyperpage}{66}
+\indexentry{spinlock|hyperpage}{67}
+\indexentry{stallo|hyperpage}{68}
+\indexentry{deadlock|hyperpage}{68}
+\indexentry{starvation|hyperpage}{68}
+\indexentry{transazione|hyperpage}{74}
+\indexentry{rollback|hyperpage}{74}
+\indexentry{log|hyperpage}{75}
+\indexentry{checkpoint|hyperpage}{75}
+\indexentry{lock|hyperpage}{76}
+\indexentry{timestamp ordering|hyperpage}{76}
+\indexentry{stallo|hyperpage}{77}
+\indexentry{deadlock|hyperpage}{77}
+\indexentry{stallo|hyperpage}{77}
+\indexentry{grafo di assegnazione delle risorse|hyperpage}{77}
+\indexentry{stallo|hyperpage}{82}
+\indexentry{registri|hyperpage}{82}
+\indexentry{loader|hyperpage}{83}
+\indexentry{memory address register|hyperpage}{83}
+\indexentry{indirizo fisico|hyperpage}{83}
+\indexentry{swapping|hyperpage}{85}
+\indexentry{compattazione|hyperpage}{87}
+\indexentry{paginazione|hyperpage}{88}
+\indexentry{frame|hyperpage}{88}
+\indexentry{pagine fisiche|hyperpage}{88}
+\indexentry{tabella dei frame|hyperpage}{89}
+\indexentry{PTBR|hyperpage}{90}
+\indexentry{TLB|hyperpage}{90}
+\indexentry{flush|hyperpage}{91}
+\indexentry{PTLR|hyperpage}{91}
+\indexentry{segmentazione|hyperpage}{94}
+\indexentry{tabella dei segmenti|hyperpage}{95}
+\indexentry{spazio degli indirizzi virtuali|hyperpage}{97}
+\indexentry{swapping|hyperpage}{100}
+\indexentry{paginatore|hyperpage}{100}
+\indexentry{sovrallocazione|hyperpage}{105}
+\indexentry{Belady|hyperpage}{107}
+\indexentry{algoritmo OPT o MIN|hyperpage}{107}
+\indexentry{algoritmo LRU|hyperpage}{108}
+\indexentry{algoritmo LFU|hyperpage}{109}
+\indexentry{algoritmo MFU|hyperpage}{109}
+\indexentry{thrashing|hyperpage}{113}
+\indexentry{pafe fault frequency|hyperpage}{115}
+\indexentry{PFF|hyperpage}{115}
+\indexentry{prepaginazione|hyperpage}{118}
+\indexentry{TLB|hyperpage}{118}
+\indexentry{lock bit|hyperpage}{119}
+\indexentry{file|hyperpage}{120}
+\indexentry{tabella dei file aperti|hyperpage}{121}
+\indexentry{lock|hyperpage}{122}
+\indexentry{grafo aciclico|hyperpage}{124}
+\indexentry{inode|hyperpage}{130}
+\indexentry{raw partition|hyperpage}{132}
+\indexentry{raw disk|hyperpage}{132}
+\indexentry{tabella di montaggio|hyperpage}{132}
+\indexentry{virtual file system|hyperpage}{133}
+\indexentry{VFS|hyperpage}{133}
+\indexentry{tabella di allocazione dei file|hyperpage}{137}
+\indexentry{FAT|hyperpage}{137}
+\indexentry{file system annotati|hyperpage}{141}

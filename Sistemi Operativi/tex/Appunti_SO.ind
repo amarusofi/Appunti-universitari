@@ -1,0 +1,199 @@
+\begin{theindex}
+
+  \item algoritmo LFU, \hyperpage{109}
+  \item algoritmo LRU, \hyperpage{108}
+  \item algoritmo MFU, \hyperpage{109}
+  \item algoritmo OPT o MIN, \hyperpage{107}
+  \item APC, \hyperpage{48}
+  \item API, \hyperpage{17}, \hyperpage{46}
+  \item attivazione dello scheduler, \hyperpage{49}
+
+  \indexspace
+
+  \item Belady, \hyperpage{107}
+  \item bootstrap, \hyperpage{10}, \hyperpage{26}
+  \item bound, \hyperpage{50}
+  \item buffer, \hyperpage{12}
+  \item buffering, \hyperpage{38}
+  \item burst, \hyperpage{50}
+
+  \indexspace
+
+  \item cancellation point, \hyperpage{48}
+  \item checkpoint, \hyperpage{75}
+  \item chiamate di procedure asincrone, \hyperpage{48}
+  \item communication link, \hyperpage{35}
+  \item compattazione, \hyperpage{87}
+  \item comunicazione asincrona, \hyperpage{37}
+  \item comunicazione sincrona, \hyperpage{37}
+  \item core, \hyperpage{44}
+  \item CPU bound, \hyperpage{50}
+  \item CPU burst, \hyperpage{50}
+
+  \indexspace
+
+  \item deadlock, \hyperpage{68}, \hyperpage{77}
+  \item diritto di prelazione, \hyperpage{51}, \hyperpage{63}
+  \item dispatcher, \hyperpage{51}
+
+  \indexspace
+
+  \item esecuzione concorrente, \hyperpage{44}
+  \item exec(), \hyperpage{47}
+  \item exit(), \hyperpage{33}
+
+  \indexspace
+
+  \item FAT, \hyperpage{137}
+  \item FCFS, \hyperpage{52}
+  \item file, \hyperpage{120}
+  \item file system annotati, \hyperpage{141}
+  \item firmware, \hyperpage{10}
+  \item flush, \hyperpage{91}
+  \item fork(), \hyperpage{33}, \hyperpage{47}
+  \item frame, \hyperpage{88}
+
+  \indexspace
+
+  \item Gantt, \hyperpage{52}
+  \item grafo aciclico, \hyperpage{124}
+  \item grafo di assegnazione delle risorse, \hyperpage{77}
+
+  \indexspace
+
+  \item heavyweight process, \hyperpage{43}
+
+  \indexspace
+
+  \item I/O bound, \hyperpage{50}
+  \item I/O burst, \hyperpage{50}
+  \item indirizo fisico, \hyperpage{83}
+  \item inode, \hyperpage{130}
+  \item interleaved, \hyperpage{44}
+  \item IPC, \hyperpage{34}, \hyperpage{39}
+
+  \indexspace
+
+  \item job pool, \hyperpage{13}
+
+  \indexspace
+
+  \item latenza, \hyperpage{51}
+  \item light weight process, \hyperpage{49}
+  \item loader, \hyperpage{83}
+  \item lock, \hyperpage{64}, \hyperpage{76}, \hyperpage{122}
+  \item lock bit, \hyperpage{119}
+  \item lock mutex, \hyperpage{66}
+  \item log, \hyperpage{75}
+  \item loopback, \hyperpage{39}
+  \item LWP, \hyperpage{49}
+
+  \indexspace
+
+  \item mailbox, \hyperpage{36}
+  \item marshalling, \hyperpage{39}
+  \item matchmaker, \hyperpage{40}
+  \item memory address register, \hyperpage{83}
+  \item metodo stratificato, \hyperpage{22}
+  \item microkernel, \hyperpage{23}
+  \item migrazione guidata, \hyperpage{60}
+  \item migrazione spontanea, \hyperpage{60}
+  \item modello a memoria condivisa, \hyperpage{20}, \hyperpage{34}
+  \item modello a scambio di messaggi, \hyperpage{20}, \hyperpage{35}
+  \item multicore, \hyperpage{44}, \hyperpage{61}
+  \item multielaborazione asimmetrica, \hyperpage{60}
+  \item multielaborazione simmetrica, \hyperpage{60}
+  \item multiprogrammazione, \hyperpage{13}
+  \item multitasking, \hyperpage{14}
+  \item multithreading, \hyperpage{61}
+
+  \indexspace
+
+  \item pafe fault frequency, \hyperpage{115}
+  \item paginatore, \hyperpage{100}
+  \item paginazione, \hyperpage{88}
+  \item pagine fisiche, \hyperpage{88}
+  \item PCB, \hyperpage{50}
+  \item PCS, \hyperpage{59}
+  \item Peterson, \hyperpage{63}
+  \item PFF, \hyperpage{115}
+  \item pid, \hyperpage{32}
+  \item pipe, \hyperpage{41}
+  \item predilezione, \hyperpage{60}
+  \item prelazione, \hyperpage{51}
+  \item prepaginazione, \hyperpage{118}
+  \item process contention scope, \hyperpage{59}
+  \item process control block, \hyperpage{29}, \hyperpage{50}
+  \item PTBR, \hyperpage{90}
+  \item Pthreads, \hyperpage{46}
+  \item PTLR, \hyperpage{91}
+
+  \indexspace
+
+  \item race condition, \hyperpage{62}
+  \item raw disk, \hyperpage{132}
+  \item raw partition, \hyperpage{132}
+  \item registri, \hyperpage{82}
+  \item rendez-vous, \hyperpage{37}
+  \item rendezvous, \hyperpage{40}
+  \item retroazione, \hyperpage{58}
+  \item RMI, \hyperpage{38}
+  \item rollback, \hyperpage{74}
+  \item round-robin, \hyperpage{56}
+  \item RPC, \hyperpage{38, 39}
+  \item RR, \hyperpage{56}
+  \item run(), \hyperpage{47}
+  \item Runnable, \hyperpage{47}
+
+  \indexspace
+
+  \item scheduler, \hyperpage{31}
+  \item scheduler a breve termine, \hyperpage{50}
+  \item segmentazione, \hyperpage{94}
+  \item semaforo, \hyperpage{65}
+  \item sezione critica, \hyperpage{62}
+  \item sistema distribuito, \hyperpage{16}
+  \item sistema operativo, \hyperpage{9}
+  \item SJF, \hyperpage{53}
+  \item socket, \hyperpage{38}
+  \item sovrallocazione, \hyperpage{105}
+  \item spazio degli indirizzi virtuali, \hyperpage{97}
+  \item spinlock, \hyperpage{67}
+  \item stallo, \hyperpage{68}, \hyperpage{77}, \hyperpage{82}
+  \item stallo della memoria, \hyperpage{61}
+  \item start, \hyperpage{47}
+  \item starvation, \hyperpage{68}
+  \item stub, \hyperpage{39}
+  \item swapping, \hyperpage{32}, \hyperpage{85}, \hyperpage{100}
+  \item system call, \hyperpage{10}, \hyperpage{17}
+
+  \indexspace
+
+  \item tabella dei file aperti, \hyperpage{121}
+  \item tabella dei frame, \hyperpage{89}
+  \item tabella dei segmenti, \hyperpage{95}
+  \item tabella di allocazione dei file, \hyperpage{137}
+  \item tabella di montaggio, \hyperpage{132}
+  \item target thread, \hyperpage{47}
+  \item TCP, \hyperpage{39}
+  \item TCP/IP, \hyperpage{39}
+  \item thrashing, \hyperpage{113}
+  \item Thread, \hyperpage{46}
+  \item thread, \hyperpage{43}
+  \item thread pool, \hyperpage{49}
+  \item time slice, \hyperpage{56}
+  \item timestamp ordering, \hyperpage{76}
+  \item TLB, \hyperpage{90}, \hyperpage{118}
+  \item transazione, \hyperpage{74}
+
+  \indexspace
+
+  \item UDP, \hyperpage{39}
+  \item upcall, \hyperpage{49}
+
+  \indexspace
+
+  \item VFS, \hyperpage{133}
+  \item virtual file system, \hyperpage{133}
+
+\end{theindex}
