@@ -1565,7 +1565,7 @@ Se si dispone dell'istruzione \texttt{TestAndSet()}, si può realizzare la mutua
 \begin{center}
   \includegraphics[scale=0.6]{img/0025.png}
 \end{center}
-
+%
 L'istruzione \texttt{Swap()}, agisce sul contenuto di due parole di
 memoria; anch'essa è eseguita atomicamente.
 \begin{center}
@@ -1577,7 +1577,7 @@ variabile booleana locale \texttt{chiave}.
 \begin{center}
   \includegraphics[scale=0.6]{img/0027.png}
 \end{center}
-
+%
 Questi algoritmi soddisfano il requisito della mutua esclusione, ma non quello dell'atte­sa limitata.
 Di seguito, un algoritmo che sfrutta l'istruzione \texttt{TestAndSet()}
 per soddisfare tutti e tre i requisiti desiderati. Le strutture dati condivise sono:
@@ -1598,7 +1598,7 @@ La definizione classica di \texttt{signal()} in pseudocodice è la seguente:
 \begin{center}
   \includegraphics[scale=0.6]{img/0029.png}
 \end{center}
-
+%
 Tutte le modifiche al valore del semaforo contenute nelle operazioni \texttt{wait()} e \texttt{signal()}
 si devono eseguire in modo indivisibile. Inoltre, nel
 caso della \texttt{wait(S)} si devono eseguire senza interruzione anche la verifica del valore intero
@@ -1632,8 +1632,8 @@ altro processo che tenti di entrarvi si trova sempre nel ciclo del codice della 
 perché i processi "girano" (\emph{spin}) mentre attendono al semaforo. (I semafori spinlock hanno
 però il vantaggio di non richiedere cambio di contesto nel caso in cui un processo sia fermo
 in attesa. Tali cambi di contesto possono essere piuttosto costosi, in termini di tempo.
-i semafori spinlock sono utili quando i lock sono applicati per brevi intervalli
-di tempo.)
+(i semafori spinlock sono utili quando i lock sono applicati per brevi intervalli
+di tempo)
 
 Per superare la necessità dell'attesa attiva, si possono modificare le definizioni delle
 operazioni \texttt{wait()} e \texttt{signal}: quando un processo invoca l'operazione \texttt{wait()} e trova
