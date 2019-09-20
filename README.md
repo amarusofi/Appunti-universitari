@@ -1,4 +1,4 @@
-# Appunti
+# Appunti universitari
 Appunti relativi a corsi della facoltà di **Informatica** dell'_Università degli Studi di Milano - Bicocca_.
 
 ### Disclaimer
