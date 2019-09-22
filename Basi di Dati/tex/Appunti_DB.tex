@@ -13,6 +13,10 @@
 \usepackage{cancel}
 \definecolor{mygrey}{HTML}{e6e6e6} %9fdfbf - c6ecd9
 \definecolor{myblue}{RGB}{0, 80, 110}
+<<<<<<< HEAD
+\definecolor{mygreen}{HTML}{004d4d}
+=======
+>>>>>>> f674ee423c5a8cce825585ef2c25d72994b5de73
 \usepackage{tcolorbox}
 \newtcolorbox{mybox}[1]{colback=gray!5!white,colframe=gray!75!black,fonttitle=\bfseries,title=#1}
 \usepackage{soul} %for \hl
@@ -921,10 +925,214 @@ WHERE NImp = (SELECT MAX(NImp)
 
 \subsection{Esercizi}
 \subsubsection{Esercizio 1}
+<<<<<<< HEAD
+Data la seguente base di dati:\medskip\\
+=======
+>>>>>>> f674ee423c5a8cce825585ef2c25d72994b5de73
 ATTORI(\underline{CodAttore}, Nome, AnnoNascita, Nazionalità)\\
 RECITA(\underline{CodAttore*, CodFilm*})\\
 FILM(\underline{CodFilm}, Titolo, AnnoProduzione, Nazionalità, Regista, Genere)\\
 PROIEZIONI(\underline{CodProiezione}, CodFilm*, CodSala*, Incasso, DataProiezione)\\
+<<<<<<< HEAD
+SALE(\underline{CodSala}, Posti, Nome, Città)\medskip\\
+%
+Scrivere le interrogazioni SQL che restituiscono le seguenti informazioni:
+\begin{enumerate}[leftmargin=*]
+\item Il nome di tutte le sale di Pisa
+\begin{verbatim}
+SELECT Nome FROM Sale
+WHERE Città='Pisa'
+\end{verbatim}
+\item Il titolo dei film di F. Fellini prodotti dopo il 1960.
+\begin{verbatim}
+SELECT Titolo FROM Film
+WHERE Regista='Fellini' AND
+      AnnoProduzione>1960
+\end{verbatim}
+\item Il titolo e il regista dei film di fantascienza giapponesi o francesi prodotti dopo il 1990
+\begin{verbatim}
+SELECT Titolo, Regista FROM Film
+WHERE Genere='fantascienza' AND
+      (Nazionalità='giapponese' OR
+      Nazionalità='francese') AND
+      AnnoProduzione>1990
+\end{verbatim}
+\item Il titolo dei film di fantascienza, giapponesi prodotti dopo il 1990 oppure francesi
+\begin{verbatim}
+SELECT Titolo FROM Film
+WHERE Genere='fantascienza' AND
+      ((Nazionalità='giapponese' AND
+      AnnoProduzione>1990) OR
+      Nazionalità='francese')
+\end{verbatim}
+\item I titolo dei film dello stesso regista di “Casablanca”
+\begin{verbatim}
+SELECT Titolo FROM Film
+WHERE Regista = (SELECT Regista FROM Film
+                WHERE Titolo='Casablanca')
+\end{verbatim}
+\item Il titolo ed  il genere dei film proiettati il giorno di Natale 2004
+\begin{verbatim}
+SELECT DISTINCT Titolo, Genere FROM Film
+WHERE CodFilm = (SELECT CodFilm FROM Proiezioni
+                WHERE DataProiezione='25/12/2004')
+\end{verbatim}
+\item  Il titolo ed  il genere dei film proiettati a Napoli il giorno di Natale 2004
+\begin{verbatim}
+SELECT DISTINCT Titolo, Genere FROM Film
+WHERE CodFilm = (SELECT CodFilm FROM Proiezioni
+                WHERE DataProiezione='25/12/2004' AND
+                CodSala = (SELECT CodSala FROM Sale
+                          WHERE Città='Napoli'))
+\end{verbatim}
+oppure
+\begin{verbatim}
+SELECT DISTINCT Titolo, Genere FROM Film
+JOIN Proiezioni ON Film.CodFilm=Proiezioni.CodFilm
+JOIN Sale ON Proiezioni.CodSala=Sale.CodSala
+WHERE Città='Napoli' AND
+      DataProiezione='25/12/2004'
+\end{verbatim}
+\item  I nomi delle sale di Napoli in cui  il giorno di Natale 2004 è stato proiettato un film con R.Williams
+\begin{verbatim}
+SELECT S.Nome FROM Sale S
+JOIN Proiezioni P ON S.CodSala=P.CodSala
+JOIN Recita R ON P.CodFilm=R.CodFilm
+JOIN Attori A ON R.CodAttore=A.CodAttore
+WHERE Città='Napoli' AND
+      DataProiezione='25/12/2004' AND
+      A.Nome='Williams'
+\end{verbatim}
+oppure
+\begin{verbatim}
+SELECT Nome FROM Sale S
+WHERE CodSala = (SELECT CodSala FROM Proiezioni
+                WHERE DataProiezione='25/12/2004' AND
+                CodFilm = (SELECT CodFilm FROM Recita
+                          WHERE CodAttore = ( SELECT CodAttore
+                                              FROM Attori
+                                              WHERE Nome='Williams')))
+\end{verbatim}
+\end{enumerate}
+
+\subsubsection{Esercizio 2}
+Data la seguente base di dati:\medskip\\
+STUDENTE(\underline{mat}, nome, cognome, luogoNascita)\\
+ESAME(\underline{mat}, \underline{codCorso}, voto, data)\\
+CORSO(\underline{codCorso}, nomeCorso, docente)\medskip\\
+Si scrivano le seguenti query SQL:
+\begin{enumerate}[leftmargin=*]
+\item Trovare la città in cui sono nati gli studenti che complessivamente hanno superato più esami rispetto agli studenti nati in altre città.
+\begin{verbatim}
+CREATE VIEW Conteggio(città, numEsami)
+AS SELECT S.luogoNascita, COUNT(S.mat)
+FROM Studente S
+JOIN Esame E ON S.mat=E.mat
+GROUP BY S.luogoNascita;
+
+SELECT C.città FROM Conteggio C
+WHERE C.numEsami = (SELECT MAX(C2.numEsami)
+                  FROM Conteggio C2)
+\end{verbatim}
+\item Trovare nome, cognome e matricola degli studenti che hanno superato l'esame di analisi con voto superiore al voto ottenuto per l'esame di fisica.
+\begin{verbatim}
+SELECT S.nome, S.cognome, S.mat FROM Studente S
+JOIN Esame E1 ON S.mat=E1.mat
+JOIN Esame E2 ON S.mat=E2.mat
+JOIN Corso C1 ON E1.codCorso=C1.codCorso
+JOIN Corso C2 ON E2.codCorso=C2.codCorso
+WHERE C1.nomeCorso='Analisi' AND
+      C2.nomeCorso='Fisica' AND
+      E1.voto>E2.voto
+\end{verbatim}
+\item Trovare il nome dei corsi di cui studenti omonimi hanno superato l'esame.
+\begin{verbatim}
+SELECT C.nome FROM Corso C
+JOIN ESAME E ON C.codCorso=E.codCorso
+JOIN STUDENTE S1 ON E.mat=S1.mat
+JOIN STUDENTE S2 ON E.mat=S2.mat
+WHERE S1.nome=S2.nome AND
+      S1.cognome=S2.cognome AND
+      S1.mat<>S2.mat
+\end{verbatim}
+\end{enumerate}
+
+\subsubsection{Esercizio 3}
+La seguente base di dati descrive l'attività di una società di noleggio di autovetture che ha diverse sedi in alcune città italiane:\medskip\\
+SEDE(\underline{nomeSede}, Indirizzo, città, telefono, direttore)\\
+AUTOVETTURA(\underline{targa}, modello, annoImmatricolazione, numeroPosti, colore)\\
+CLIENTE(\underline{CF}, nome, cognome, telefono, città)\\
+CONTRATTO(\underline{auto, cliente, dataNoleggio}, sedeNoleggio, dataConsegna, sedeConsegna)
+%
+\begin{enumerate}[leftmargin=*]
+\item Trovare il numero di autovetture noleggiate in ogni città, da clienti con residenza in una città diversa dalla città in cui avviene il noleggio
+\begin{verbatim}
+SELECT C.sedeNoleggio, A.COUNT(targa) FROM Autovettura A
+JOIN Contratto C ON A.targa = C.auto
+JOIN Cliente Cl ON C.cliente = Cl.CF
+WHERE Cl.città<>C.sedeNoleggio
+GROUP BY C.sedeNoleggio
+\end{verbatim}
+\item Trovare i clienti (CF, nome, cognome) che hanno noleggiato almeno due macchine diverse nella stessa sede di noleggio
+\begin{verbatim}
+SELECT DISTINCT C.CF, C.nome, C.cognome, FROM Cliente C
+JOIN Contratto C1 ON C.CF=C1.cliente
+JOIN Contratto C2 ON C.CF=C2.cliente
+JOIN AUTOVETTURA A1 ON C1.auto=A1.targa
+JOIN AUTOVETTURA A2 ON C2.auto=A2.targa
+WHERE C1.sedeNoleggio=C2.sedeNoleggio AND
+      A1.targa<>A2.targa
+\end{verbatim}
+\item Trovare la sede di noleggio, indicandone anche la città, che ha realizzato il maggior numero di contratti della durata di un giorno (cioè in cui la macchina sia stata riconsegnata lo stesso giorno in cui è stata noleggiata)
+\begin{verbatim}
+#Raggruppa le righe in base alla sede e alla città
+#e per ogni gruppo effettua il conteggio degli elementi presenti
+
+CREATE VIEW NoleggiUnGiorno(sede, città, numero)
+AS SELECT S.nomeSede, S.città, COUNT(*)
+FROM Sede S
+JOIN Contratto C ON S.nomeSede=C.sedeNoleggio
+WHERE C.dataNoleggio=C.dataConsegna
+GROUP BY S.nomeSede, S.città;
+
+SELECT N.sede, N.città
+FROM NoleggiUnGiorno N
+WHERE numero = (SELECT MAX(N1.numero) FROM NoleggiUnGiorno N1)
+\end{verbatim}
+\end{enumerate}
+
+\subsubsection{Esercizio 4}
+La seguente basi di dati descrive l'archivio di una società di charter che organizza e vende vacanze in barca. La società dispone di una flotta di barche ed organizza viaggi con diverse destinazioni.\medskip\\
+VIAGGIO(\underline{idCliente}, \underline{dataPartenza}, \underline{nomeBarca}, Skipper, portoPartenza, portoArrivo, costo)\\
+CLIENTE(\underline{idCliente}, nome, cognome, nazione)\\
+FLOTTA(\underline{NomeBarca}, modello, lunghezza, posti, annoImmatricolazione)\\
+PORTO(\underline{Nome}, nazione, posti, telefono, canaleRadio)
+\begin{enumerate}[leftmargin=*]
+\item Trovare la nazione che è stata coinvolta nella maggior parte dei viaggi (come porto di arrivo o come porto di partenza, entrambe)
+\begin{verbatim}
+CREATE VIEW Info as SELECT P.nazione, count(*) as Conteggio FROM Porto P
+JOIN Viaggio V1 ON P.nazione = V.portoPartenza
+JOIN Viaggio V2 ON P.nazione = V.portoArrivo
+GROUP BY P.nazione;
+
+SELECT I.nazione FROM Info I
+WHERE I.Conteggio = SELECT(MAX(I1.Conteggio) FROM Info I1)
+\end{verbatim}
+\item Trovare il nome delle barche che non sono mai state affittate
+\begin{verbatim}
+SELECT F.NomeBarca FROM Flotta F
+LEFT JOIN Viaggio V ON F.NomeBarca=V.nomeBarca
+WHERE V.nomeBarca IS NULL
+\end{verbatim}
+\item Trovare per ogni porto il costo medio dei viaggi da lì partiti che non abbiamo imbarcato clienti della nazionalità del porto stesso.
+\begin{verbatim}
+SELECT P.Nome, AVG(V.costo)
+FROM Porto P
+JOIN Viaggio V on P.Nome=V.portoPartenza
+JOIN Cliente C on P.nazione<>C.nazione
+GROUP BY P.Nome
+\end{verbatim}
+=======
 SALE(\underline{CodSala}, Posti, Nome, Città)
 %
 \paragraph{Scrivere le interrogazioni SQL che restituiscono le seguenti informazioni}
@@ -1129,6 +1337,7 @@ PORTO(\underline{Nome}, nazione, posti, telefono, canaleRadio)
   JOIN Cliente C on P.nazione<>C.nazione
   GROUP BY P.Nome
   \end{verbatim}
+>>>>>>> f674ee423c5a8cce825585ef2c25d72994b5de73
 \end{enumerate}
 
 \subsubsection{Esercizio 5}
@@ -1139,6 +1348,38 @@ AFFITTO(\underline{idLocale}, agente, \underline{dataStipulaContratto}, codiceAf
 VENDITA(\underline{idLocale}, agente, prezzo, \underline{dataVendita}, codiceAcquirente)\\
 CLIENTE(\underline{codiceCliente}, nome, cognome, telefono, CF)\medskip
 \begin{enumerate}
+<<<<<<< HEAD
+\item Trovare codiceCliente, nome, cognome dei clienti che abbiano sia venduto che affittato locali a Milano nel 2010
+\begin{verbatim}
+SELECT C.codiceCliente, C.nome, C.cognome FROM Cliente C
+JOIN Locale L ON C.codiceCliente=L.codiceProprietario
+JOIN Affitto A ON L.idLocale=A.idLocale
+JOIN Vendita V ON L.idLocale=V.idLocale
+WHERE L.città='Milano' AND
+      YEAR(A.dataStipulaContratto)='2010' AND
+      YEAR(V.dataVendita)='2010'
+\end{verbatim}
+\item Trovare matricola, nome, cognome dell'agente che ha stipulato più contratti di vendita di uffici
+\begin{verbatim}
+#Conteggio è la nuova tabella
+#Contratti è il nome della colonna che contiene count(*)
+#Group by va fatto per forza su tutti gli elementi
+#presenti nel SELECT che non sono generati da un operatore
+#(come count() ad es.)
+
+CREATE VIEW Conteggio as
+SELECT A.matricola, A.nome, A.cognome, count(*) as Contratti
+FROM Agente A
+JOIN Vendita V ON A.matricola=V.agente
+JOIN Loacle L ON V.idLocale=L.idLocale
+WHERE tipoLocale='ufficio'
+GROUP BY matricola, nome, cognome;
+
+SELECT C.matricola, C.nome, C.cognome FROM Conteggio C
+WHERE C.Contratti = ( SELECT MAX(C1.Contratti)
+                      FROM Contratti C1)
+\end{verbatim}
+=======
   \item Trovare codiceCliente, nome, cognome dei clienti che abbiano sia venduto che affittato locali a Milano nel 2010
   \begin{verbatim}
     SELECT C.codiceCliente, C.nome, C.cognome FROM Cliente C
@@ -1168,6 +1409,7 @@ CLIENTE(\underline{codiceCliente}, nome, cognome, telefono, CF)\medskip
     SELECT C.matricola, C.nome, C.cognome FROM Conteggio C
     WHERE C.Contratti = (SELECT MAX(C1.Contratti) FROM Contratti C1)
   \end{verbatim}
+>>>>>>> f674ee423c5a8cce825585ef2c25d72994b5de73
 \end{enumerate}
 \section{Link utili}
 \begin{itemize}[leftmargin=*]
