@@ -12,4 +12,4 @@ Si suggerisce la visione delle seguenti repository:
 - [Appunti-universitari](https://github.com/JacopoDeAngelis/Appunti-universitari) - Jacopo De Angelis
 - [appunti](https://github.com/bigboss98/appunti) - bigboss98
 - [DaveAppunti](https://github.com/daverhapsody/DaveAppunti) - Dave
-- [class-notes](https://github.com/ila/class-notes) - Ilaria Battiston e Adrian Castro
+- [class-notes](https://github.com/ila/class-notes) - Ila
